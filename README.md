@@ -20,17 +20,17 @@ import networkx as nx
 
 G = nx.Graph()
 edges_with_weights = [
-    ("Alice", "Bob", 2), ("Alice", "Charlie", 3),
-    ("Bob", "Charlie", 1), ("Bob", "David", 4),
-    ("David", "Eve", 1), ("Eve", "Frank", 5),
-    ("Charlie", "Eve", 2)
+    ("Home", "School", 2), ("Home", "Work", 3),
+    ("School", "Work", 1), ("School", "Tennis", 4),
+    ("Tennis", "Cafe", 1), ("Cafe", "Football", 5),
+    ("Work", "Cafe", 2)
 ]
 G.add_weighted_edges_from(edges_with_weights)
 
-shortest_paths = nx.single_source_dijkstra_path(G, 'Alice')
-shortest_paths_lengths = nx.single_source_dijkstra_path_length(G, 'Alice')
+shortest_paths = nx.single_source_dijkstra_path(G, 'Home')
+shortest_paths_lengths = nx.single_source_dijkstra_path_length(G, 'Home')
 
-print("Найкоротші шляхи від Alice:")
+print("Найкоротші шляхи від Home:")
 for target, path in shortest_paths.items():
     print(f"{target}: {path}, Вага: {shortest_paths_lengths[target]}")
 ```
