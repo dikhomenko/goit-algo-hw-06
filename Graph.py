@@ -37,8 +37,6 @@ print("Середній кластерний коефіцієнт:", average_clu
 
 # Task 2
 
-import networkx as nx
-
 def dfs_paths(graph, start, goal):
     stack = [(start, [start])]
     while stack:
@@ -81,9 +79,6 @@ for path in bfs_result:
 
 # Task 3
 
-import networkx as nx
-import matplotlib.pyplot as plt
-
 # Створення графа з вагами
 G = nx.Graph()
 edges_with_weights = [("Home", "School", 2), ("Home", "Work", 3), ("School", "Work", 1), 
@@ -106,5 +101,4 @@ shortest_paths_lengths = nx.single_source_dijkstra_path_length(G, 'Home')
 print("Найкоротші шляхи від Home:")
 for target, path in shortest_paths.items():
     print(f"{target}: {path}, Вага: {shortest_paths_lengths[target]}")
-
-
+    
